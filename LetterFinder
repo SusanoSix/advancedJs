@@ -1,0 +1,20 @@
+//Simple function to find a letter in a word,
+//using a NESTED FOR loop + function call
+
+
+function finder(word, letter) {
+
+    for(i = 0; i < word.length; i++) {
+
+        //Searches the index for the specified letter
+        if(word[i] === letter){
+            console.log("Found ", letter, " at ", i); 
+        }
+        else{
+            console.log("found: nothing");
+        }
+    }
+}
+
+//Replace "word" , "d" with anything.
+finder("word","d");
