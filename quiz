@@ -1,0 +1,39 @@
+//simple logic practice nesting IFs to create dependent execution.
+
+
+function quiz(){
+  
+    //initiator
+  var q = prompt("Welcome to the Big Quiz! Are you ready");  
+
+    //IMPORTANT: quiz does not proceed if the initializer isn't correct
+    //IMPORTANT: subsequent IFs are nested in the first IF
+    if(q == "Yes" || q == "yes") {
+        alert("Wow! Okay. First question: ")
+        var one = prompt("How old am I?");
+
+        
+    }
+
+     if(one == 100){
+        alert("Pretty good. Second question: ")
+        var two = prompt("What am I?");
+    }
+     if(two == "software" || two == "Software"){
+        alert("Nice. Third question: ")
+        var three = prompt("Where am I?");
+    }
+
+     if(three == "on-chain" || two == "on a blockchain"){
+        alert("Nice! Looks like you've answered everything correctly.. If you're seeing this screen, you've scored a 3/3. See you soon.. ");
+
+        
+    }
+
+    else {
+        alert("Hmm, looks like you fell through. Try again.")
+    }
+}
+
+//Caller
+quiz();
