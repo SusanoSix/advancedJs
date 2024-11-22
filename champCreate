@@ -1,0 +1,27 @@
+function createChamp() {
+    
+        var name = prompt("Let's name your character. What's it gonna be?");
+        if (name > "") {
+            alert("nice, your character is: " + name);
+            Object.assign(champ, {name: name,});
+
+
+            var ms = prompt("What's "+ name+ "'s movement speed?");
+            if (ms > "") {
+                alert("Nice. "+name+"'s movement speed is: "+ ms);
+                Object.assign(champ, {movementSpeed: ms,});
+    
+                
+    
+            }
+            
+
+        }
+
+
+    else {
+        alert("Let's try a name this time-")
+        createChamp();
+    }
+
+}
