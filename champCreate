@@ -1,16 +1,31 @@
+// Added champ object
+var champ = {};
+
 function createChamp() {
     
         var name = prompt("Let's name your character. What's it gonna be?");
         if (name > "") {
             alert("nice, your character is: " + name);
-            Object.assign(champ, {name: name,});
+            Object.assign(champ, {name: name,}); }
 
 
             var ms = prompt("What's "+ name+ "'s movement speed?");
             if (ms > "") {
                 alert("Nice. "+name+"'s movement speed is: "+ ms);
                 Object.assign(champ, {movementSpeed: ms,});
-    
+
+               
+               
+                var as = prompt("What's "+ name+ "'s attack speed?");
+            if (as > "") {
+                alert("Nice. "+name+"'s attack speed is: "+ as);
+                Object.assign(champ, {attackSpeed: as,});
+
+
+            var mr = prompt("What's "+ name+ "'s base mana regen?");
+            if (mr > "") {
+                alert("Nice. "+name+"'s base mana regen is: "+ mr);
+                Object.assign(champ, {manaRegen: mr,});
                 
     
             }
@@ -24,4 +39,6 @@ function createChamp() {
         createChamp();
     }
 
+}   alert("Here's the breakdown of "+name+"'s stats:")
+   console.log(champ);
 }
