@@ -1,0 +1,18 @@
+// Classes
+
+
+
+class Car { // Creates a modular class
+    constructor(color, speed) {  // Constructor assigns the passed in parameters to the future object's property 
+        this.color = color;      
+        this.speed = speed;
+    }
+    
+    turboOn() { // Function name is not needed, just the method's name. turboOn instead of function turboOn
+        console.log("turbo is on!")
+    }
+}
+
+const car1 = new Car("red", 120); // car1 variable to inherit aspects of the Car class + use the method
+ 
+car1.turboOn(); // "turbo is on!"
