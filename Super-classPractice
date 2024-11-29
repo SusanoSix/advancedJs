@@ -1,0 +1,37 @@
+// Practice using classes with inherited code
+
+
+// Creeated Super-class
+class Tank {
+    attack() {
+        console.log("50 dmg: 60 second cooldown");
+    }
+}
+
+// Sub Super-class
+class Assassin extends Tank {
+    attack() {
+        console.log("100 dmg: 7 second cooldown");
+    }
+}
+
+// Sub class
+class ADC extends Assassin {
+    attack() {
+        console.log("10 dmg: no cooldown");
+    }
+}
+
+// add a new variable that will use the class' methods
+
+
+// Creates new character and assigns it a "class" from one the classes + an attack based on its class.
+var braum = new Tank();
+var ekko = new Assassin();
+var jinx = new ADC();
+
+
+// Returns the character's attack for the corresponding "class"
+ekko.attack();
+jinx.attack();
+braum.attack();
