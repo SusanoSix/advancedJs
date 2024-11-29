@@ -1,0 +1,24 @@
+// Practice with polymorhic code to reduce clutter and centralize arguments
+
+// League of Legends character(s) object(s)
+
+const ekko = {
+    attack: function() { 
+        return "Time Winder: 100 dmg"
+}}
+
+// League of Legends character(s) object(s)
+const jinx = {
+    attack: function() { 
+        return "Rocket: 77 dmg"
+}}
+
+
+// Polymorphic argument to execute arguments contexually
+function pressAttack(thing) {
+    console.log(thing.attack());
+
+}
+
+pressAttack(ekko);
+pressAttack(jinx);
