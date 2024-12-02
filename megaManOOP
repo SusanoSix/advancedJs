@@ -1,0 +1,118 @@
+// Object orientated programming paradigm practice using Mega Man X/Zero video game as refence.
+// Contents: 3 Classes. 1 SUPER-CLASS, 2 SUB-CLASSES.
+// 1 SUB-CLASS for Hunters, the heros of the game.
+// 1 SUB-CLASS for Mavericks, the villains of the game.
+// Each SUB-CLASS child object has methods unique to the Reploid type (reploid class, Hunter/Maverick)
+// Methods are called, some executing conditionally to simulate the Mega Man Z/X video game
+
+
+// SUPER-CLASS
+class Reploid {
+    constructor(name, color, rank, hp, subTank) {
+
+        this.name = name;
+        this.color = color;
+        this.rank = rank;
+        this.hp = hp;
+        this.subTank = subTank;
+    }
+
+
+}
+
+
+
+// Hunter's sub-class
+class Hunter extends Reploid {
+    constructor(name, color, rank,hp,subTank, sword, gun) {
+        super(name, color, rank, hp);
+        this.subTank = subTank;
+        this.gun = "buster";
+        this.sword = "saber";
+
+    
+    // All 
+    }
+    gunToggle() {
+        this.gun = this.gun+ " is ready."
+        this.sword = "On standby."
+        
+    }
+    swordToggle() {
+        this.sword = this.sword + " is ready."
+        this.gun = "On standby."
+    }
+    getSelf() {
+        console.log(this);
+
+    }
+    heal() {
+
+        if (this.hp < 200) {
+        this.hp += 20 
+    
+    }
+    else {
+        this.subTank += 20
+    }
+}}
+
+
+// Maverick's SUB-CLASS
+class Maverick extends Reploid {
+    constructor(name, color, rank, hp ,subTank, transform) {
+        super(name, color, rank, hp);
+        this.subTank = subTank;
+        this.transform = transform;
+        this.hp = hp;
+        this.color = color;
+    }
+
+    // All Mavericks have a second phase upon reachong 0% HP, that restores 1000 HP. Conditional.
+    secondPhase(){
+        if (this.hp == 0) {
+            this.transform = "Active!";
+            console.log("WARNING! WARNING! WARNING!");
+            this.hp += 2000
+        }
+        else if (this.hp > 1 || this.hp == 1) {
+            this.transform = "Inactive";
+            console.log("(Second Phase is inactive until Maverick falls below 0 HP.)")
+        }
+    }
+
+    // Returns the object's stats
+    getSelf() {
+        console.log(this); 
+    }
+}
+
+
+
+
+// SUB-CLASS: Hunter objects
+let megaMan = new Hunter("MegaMan", "blue", "B", 180, 100)
+let zero = new Hunter("Zero", "red", "A+", 500, 0)
+
+
+
+// Functionaloty testing on Mega Man
+megaMan.gunToggle();
+// megaMan.gunToggle();
+megaMan.heal();
+megaMan.heal();
+megaMan.heal();
+megaMan.getSelf();
+
+
+// Functionality tesing on Zero
+zero.swordToggle();
+zero.getSelf();
+
+
+
+// Maverick objects + functionality testing
+let sigma = new Maverick("Sigma", "red, blue, purple", "S", 800, false,)
+sigma.secondPhase();
+sigma.getSelf();
+
